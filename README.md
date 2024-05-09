@@ -1,161 +1,206 @@
-# Проект YaMDb
+<a name="readme-top"></a>
+<!-- PROJECT LOGO -->
+<div align='center'>
+  <a href="https://www.python.org/" target="_blank" rel="noreferrer">
+    <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" height="95" alt="Python">
+  </a>
+  <a>
+    <img src="https://cdn.pixabay.com/photo/2019/08/05/15/09/meeting-4386216_1280.png" height="100" alt="Team" hspace="0">
+  </a>
+  </a>
+  <a>
+    <img src="https://cdn.pixabay.com/photo/2017/10/25/18/10/peer-review-icon-2888794_1280.png" height="100" alt="Review" hspace="10">
+  </a>
 
-### Технологии
-![](https://img.shields.io/badge/Django-3.2-blue) ![](https://img.shields.io/badge/DRF-3.12.4-blue) ![](https://img.shields.io/badge/DRF_simplejwt-4.7.2-blue) <br>
+<h3 align="center">reviews_api</h3>
 
-### Содержание
+  <p align="center">
+    App to share your valuable reviews
+    <br />
+    <a href="#getting-started"><strong>--> Quick start <--</strong></a>
+    <br />
+  </p>
+</div>
 
-[Описание](#description)  
-[Ресурсы проекта](#resorces)  
-[Как запустить проект](#start)  
-[Знакомство с проектом](#command)  
-[Команда проекта](#team)
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#features">Features</a>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#Get-project">Get project</a></li>
+        <li><a href="#Run-as-python-script">Run as python script</a></li>
+        <li><a href="#Secrets">Secrets</a></li>
+      </ul>
+    </li>
+    <li><a href="#explanation">Explanations</a></li>
+    <li><a href="#restrictions">Restrictions</a></li>
+    <li><a href="#project-team">Project team</a></li>
+  </ol>
+</details>
 
-<a name="description"><h3>Описание проекта</h3></a>
-___
+## Features
+- Adding your valuable reviews to each work (book, film, song, etc.).
+- Selecting a work to review from one of the categories or genres.
+- Adding a score from 1 to 10 to each work and getting the average score for all reviews.
+- Adding your comments to reviews of other users.
 
-Проект YaMDb собирает отзывы пользователей на произведения. Сами произведения в YaMDb не хранятся, здесь нельзя посмотреть фильм или послушать музыку. 
+## Built With
+![](https://img.shields.io/badge/python-3.9.19-blue)
+![](https://img.shields.io/badge/Django-3.2.3-blue)
+![](https://img.shields.io/badge/DRF-3.12.4-blue)
+![](https://img.shields.io/badge/DRF_simplejwt-4.7.2-blue)
 
-Произведения делятся на категории, такие как «Книги», «Фильмы», «Музыка». Например, в категории «Книги» могут быть произведения «Винни-Пух и все-все-все» и «Марсианские хроники», а в категории «Музыка» — песня «Давеча» группы «Жуки» и вторая сюита Баха. Список категорий может быть расширен (например, можно добавить категорию «Изобразительное искусство» или «Ювелирка»).
+# Getting Started
 
-Произведению может быть присвоен жанр из списка предустановленных (например, «Сказка», «Рок» или «Артхаус»).
+## Run as python script
+### Prerequisites
 
-Добавлять произведения, категории и жанры может только администратор.
+* python **3.9.19**
+* pip
 
-Благодарные или возмущённые пользователи оставляют к произведениям текстовые отзывы и ставят произведению оценку в диапазоне от одного до десяти (целое число); из пользовательских оценок формируется усреднённая оценка произведения — рейтинг (целое число). На одно произведение пользователь может оставить только один отзыв.
+### Installation
 
-Пользователи могут оставлять комментарии к отзывам.
-
-Добавлять отзывы, комментарии и ставить оценки могут только аутентифицированные пользователи.
-
-<p align="right">(<a href="#description">Вернуться в начало</a>)</p>
-
-<a name="resorces"><h3>Ресурсы проекта</h3></a>
-___
-* Ресурс **auth**: аутентификация.
-* Ресурс **users**: пользователи.
-* Ресурс **titles**: произведения, к которым пишут отзывы (определённый фильм, книга или песенка).
-* Ресурс **categories**: категории (типы) произведений («Фильмы», «Книги», «Музыка»). Одно произведение может быть привязано только к одной категории.
-* Ресурс **genres**: жанры произведений. Одно произведение может быть привязано к нескольким жанрам.
-* Ресурс **reviews**: отзывы на произведения. Отзыв привязан к определённому произведению.
-* Ресурс **comments**: комментарии к отзывам. Комментарий привязан к определённому отзыву.
-
-Каждый ресурс описан в документации: указаны эндпоинты (адреса, по которым можно сделать запрос), разрешённые типы запросов, права доступа и дополнительные параметры, когда это необходимо.
-
-Документация доступна  по ссылке http://127.0.0.1:8000/redoc/ после запуска проекта.
-
-<p align="right">(<a href="#description">Вернуться в начало</a>)</p>
-
-<a name="start"><h3>Как запустить проект:</h3></a>
-___
-
-Клонировать репозиторий и перейти в него в командной строке:
-
-```
-git clone https://github.com/Konstantin-Leontyev/api_yamdb.git
-```
-
-Создать и активировать виртуальное окружение:
-
-```
-python3 -m venv .venv
-```
-
-* Если у вас Linux/macOS
-
+1. Clone the repo
+   ```sh
+   $ git clone https://github.com/Alexandr-Safariantc/reviews_api
+   ```
+2. Activate virtual environment
+   ```sh
+   $ cd reviews_api
+   $ python3 -m venv venv
+* for Linux/macOS
+    ```sh
+    $ source .venv/bin/activate
     ```
-    source .venv/bin/activate
+* for windows
+    ```sh
+    $ source .venv/scripts/activate
     ```
 
-* Если у вас windows
-
+3. Upgrage pip
+    ```sh
+    (venv) $ python3 -m pip install --upgrade pip
     ```
-    source .venv/scripts/activate
+
+4. Install requirements
+    ```sh
+    (venv) $ pip install -r requirements.txt
     ```
 
-Обновить версию инсталлятора pip
-```
-python3 -m pip install --upgrade pip
-```
+5. Migrate database
+    ```sh
+    (venv) $ cd api_yamdb/
+    (venv) $ python3 manage.py migrate
+    ```
 
-Установить зависимости из файла requirements.txt:
+6. Add test data to database
+    ```sh
+    (venv) $ python3 manage.py import_csv
+    ```
 
+7. Run app
+    ```sh
+    (venv) $ python3 manage.py runserver
+    ```
 
-```
-pip install -r requirements.txt
-```
+8. Get API docs
+    ```sh
+    http://127.0.0.1:8000/redoc/
+    ```
 
-Дождаться завершения установки. Выполнить миграции:
-```
-cd api_yamdb/
-```
+### Secrets
 
-```
-python3 manage.py migrate
-```
+#### .env secrets
 
-Запустить проект:
+`ALLOWED_HOSTS`: {IP address of server you want to deploy},127.0.0.1,localhost,{your domane name if exists}<br>
+`DEBUG_VALUE`: if not setted debug mode is off, **not required**<br>
+`SECRET_DJANGO_KEY`: secret key for Django app<br>
 
-```
-python3 manage.py runserver
-```
-<p align="right">(<a href="#description">Вернуться в начало</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<a name="command"><h3>Знакомство с проектом</h3></a>
-___
+## Explanation
+### Database Structure
 
-Для ознакомления с функционалом проекта можно:
+  `Category` <br>
+  Contains name, slug.
 
-Создать и заполнить тестовую базу данных.
-```
-python3 manage.py import_csv
-```
+  `Genre` <br>
+  Contains name, slug.
 
-<p align="right">(<a href="#description">Вернуться в начало</a>)</p>
+  `Title` <br>
+  Contains category, description, genre, name, year.
 
-<a name="team"><h3>Команда проекта</h3></a>
-___
+  `GenreTitle` <br>
+  Linked model for Genre - Title relation.
 
-**Александр Сафарьянц** - Backend-разработчик
+  `Review` <br>
+  Contains author, pub_date, score, text, title.
+
+  `Comment` <br>
+  Contains author, pub_date, review, text.
+
+## Restrictions
+
+**1. Year of title creation** <br>
+We can't predict the future so only existing titles can be published in our feed.
+
+**2. One author - one review** <br>
+We value the opinions of all reviews' authors equally so you can add only one review to each title.
+
+**3. Review score** <br>
+Your review score must be integer number from 1 to 10.
+
+**4. Username 'me'** <br>
+The username 'me' isn't the best choice, is it? This value is limited for our application.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Project team
+
+**Aleksandr Safariants** - Backend-developer
 
 [![Gmail Badge](https://img.shields.io/badge/-safariantc.aa@gmail.com-c14438?style=flat&logo=Gmail&logoColor=white&link=mailto:safariantc.aa@gmail.com)](mailto:safariantc.aa@gmail.com)<p align='left'>
 
-#### Модели, view и эндпойнты:
-  * произведений,
-  * пользователя.
-#### Управление пользователями:
-  * система регистрации и аутентификации,
-  * права доступа,
-  * работа с токеном,
-  * система подтверждения через e-mail.
+#### Models, views, endpoints for:
+  * titles,
+  * users.
+#### Users management:
+  * registration, authentification system,
+  * permissions,
+  * token management,
+  * e-mail confirmation system.
 
-**Яков Кузнецов** - Backend-разработчик
+**Iakov Kuznetsov** - Backend-developer
 
 [![Gmail Badge](https://img.shields.io/badge/-jacob.sokolov.dev@gmail.com-c14438?style=flat&logo=Gmail&logoColor=white&link=mailto:jacob.sokolov.dev@gmail.com)](mailto:jacob.sokolov.dev@gmail.com)<p align='left'>
 
+#### Models for:
+* categories,
+* genres.
+#### Views endpoints for:
+* categories,
+* genres,
+* reviews,
+* comments.
+#### Additional tasks:
+* title scores,
+* import from .csv files.
 
-#### Модели для:
-* категорий,
-* жанров.
-#### View и эндпойнты для:
-* категорий,
-* жанров,
-* отзывывов,
-* комментариев.
-#### Дополниетльно:
-* рейтинг произведений,
-* реализация импорта данных из csv файлов.
-
-**Константин Леонтьев** - Тимлид
+**Konstantin Leontiev** - Teamlead
 
 [![Gmail Badge](https://img.shields.io/badge/-K.A.Leontyev@gmail.com-c14438?style=flat&logo=Gmail&logoColor=white&link=mailto:K.A.Leontyev@gmail.com)](mailto:K.A.Leontyev@gmail.com)<p align='left'>
 
-#### Модели для:
-* отзывывов,
-* комментариев.
-#### Дополниетльно:
-* общее руководство проектом,
-* ревью,
-* реализация импорта данных из csv файлов.
+#### Models for:
+* reviews,
+* comments.
+#### Additional tasks:
+* project management,
+* code review,
+* import from .csv files.
 
-<p align="right">(<a href="#description">Вернуться в начало</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>

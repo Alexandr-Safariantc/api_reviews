@@ -1,17 +1,16 @@
 from datetime import timedelta
 from pathlib import Path
 
+import os
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs'
+SECRET_KEY = os.getenv('SECRET_DJANGO_KEY', 'secret_key')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG_VALUE') == 'True'
 
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
