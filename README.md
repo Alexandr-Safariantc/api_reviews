@@ -55,7 +55,7 @@
 ![](https://img.shields.io/badge/DRF-3.12.4-blue)
 ![](https://img.shields.io/badge/DRF_simplejwt-4.7.2-blue)
 
-![](https://img.shields.io/badge/test_coverage-98%-green)
+![](https://img.shields.io/badge/test_coverage-98%25-green)
 
 # Getting Started
 
