@@ -5,7 +5,7 @@
     <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" height="95" alt="Python">
   </a>
   <a>
-    <img src="https://cdn.pixabay.com/photo/2019/08/05/15/09/meeting-4386216_1280.png" height="100" alt="Team" hspace="0">
+    <img src="https://cdn.pixabay.com/photo/2023/01/26/08/21/business-7745315_1280.png" height="100" alt="Team" hspace="0">
   </a>
   </a>
   <a>
